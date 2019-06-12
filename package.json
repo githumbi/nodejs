@@ -1,0 +1,23 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "description": "an app to learn npm liraries",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githumbi/nodejs.git"
+  },
+  "author": "githumbi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/githumbi/nodejs/issues"
+  },
+  "homepage": "https://github.com/githumbi/nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
