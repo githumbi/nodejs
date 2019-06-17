@@ -1,0 +1,22 @@
+<% include partials/header%>
+    <body>
+        <h1>a loop</h1>
+
+        <% for(var i = 0; i < myname.length; i++){ %>
+            <p><%= myname[i].names %> - <%= myname[i].author %></p>
+        <% } %>
+
+        <!-- alternitively use foreach loop whicjh is simple and short -->
+        <ul>
+        <% myname.forEach((list)=>{ %>
+            <li>the name of book is <strong><%= list.names%></strong> and aouther is <strong><%=  list.author %></strong></li>
+            
+        
+        <% })%>
+
+        </ul>
+
+<% include partials/footer%>
+
+
+
