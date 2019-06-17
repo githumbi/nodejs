@@ -1,3 +1,7 @@
+
+# nodejs
+nodejs exercises to learn using npm libraries i.e express
+
 # node js app
 
 sample nodejs app with express, ejs and more  libraries
@@ -44,5 +48,6 @@ run node "nameofapp.js" and check on browser http://localhost:3000/
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 
 
