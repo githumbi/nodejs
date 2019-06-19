@@ -1,0 +1,13 @@
+<h1>FRIEND LIST</h1>
+
+<ol>
+    <%friends.forEach((friend)=>{ %>
+          <li><%= friend%></li>
+  <%  })%>
+  
+</ol>
+
+<form action="/friendrequest" method="post">
+    <input type= "text" name="newfriend" placeholder="input name" >
+    <button>friend request</button>
+</form>
