@@ -1,0 +1,13 @@
+<% include partials/header%>
+
+<h4>camp page</h4>
+
+<div class="container">
+    <% campgrounds.forEach((campground)=>{ %>
+   <h1><%=  campground.name %></h1> 
+     <img class="img-responsive" src="<%=  campground.imgurl %>">
+    <% })%>
+</div>
+
+
+<% include partials/footer%>
