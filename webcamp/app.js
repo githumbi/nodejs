@@ -8,6 +8,10 @@ app.set("view engine", "ejs")
 
 var campgrounds = [
     {name: "moountain view", imgurl: "https://www.campsitephotos.com/photo/camp/16222/feature_Fruita_Campground-f3.jpg"},
+    {name: "hills view", imgurl: "https://www.campsitephotos.com/photo/camp/63464/feature_Pierson_Ranch-f3.jpg"},
+    {name: "moountain view", imgurl: "https://www.campsitephotos.com/photo/camp/16222/feature_Fruita_Campground-f3.jpg"},
+    {name: "hills view", imgurl: "https://www.campsitephotos.com/photo/camp/63464/feature_Pierson_Ranch-f3.jpg"},
+    {name: "moountain view", imgurl: "https://www.campsitephotos.com/photo/camp/16222/feature_Fruita_Campground-f3.jpg"},
     {name: "hills view", imgurl: "https://www.campsitephotos.com/photo/camp/63464/feature_Pierson_Ranch-f3.jpg"}
 ]
 
@@ -31,7 +35,7 @@ app.post("/campgrounds", (req,res)=>{
 
   //add to campground string
   campgrounds.push(newcampgrounds)
-    //redirect 
+    //redirect to campground
     res.redirect("/campgrounds")
 })
 
