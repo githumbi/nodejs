@@ -1,6 +1,6 @@
 const express = require("express"),
       app = express(),
-      bodyParser = require("body-parser")
+      bodyParser = require("body-parser"),
       mongoose = require("mongoose")
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -26,6 +26,7 @@ app.get("/", (req,res)=>{
     
 })
 
+//INDEX page
 //campground page with name and images
 app.get("/campgrounds", (req, res)=>{
    //fetch campgrounds from database
@@ -34,7 +35,7 @@ app.get("/campgrounds", (req, res)=>{
            console.log(err)
        } else {
            console.log("succes listing!!")
-           res.render("landpage", {campgrounds: campsites})
+           res.render("index", {campgrounds: campsites})
        }
    })
   
@@ -42,11 +43,13 @@ app.get("/campgrounds", (req, res)=>{
 
 //post name and imgurl
 app.post("/campgrounds", (req,res)=>{
-  var name =   req.body.name
-  var imgurl=   req.body.imgurl
-  var newcampgrounds= {name: name, imgurl: imgurl}
+  var name =   req.body.name,
+      imgurl=   req.body.imgurl,
+      desc = req.body.description
 
-  //add campground to db
+  newcampgrounds= {name: name, imgurl: imgurl, description: desc}
+
+//add campground to db
   camp.create(newcampgrounds,(err,redirect)=>{
       if (err) {
           console.log(err)
@@ -66,7 +69,16 @@ app.get("/campgrounds/new",(req,res)=>{
 
 //SHOW -more info about one campsite
 app.get("/campgrounds/:id",(req,res)=>{
-    res.send("detais of the campsite")
+    //find campground by id
+    camp.findById(req.params.id, (err,foundcamp)=>{
+        if (err) {
+            console.log(err)
+        }else{
+            //render that campground details with that id
+            res.render("show", {campgrounds: foundcamp })
+        }
+    })
+    
 })
 
 app.listen(3000, ()=>{
