@@ -1,0 +1,34 @@
+<% include partials/header%>
+
+
+    <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-5">Welcome to camp page</h1>
+          <p class="lead">This is a simple is a simple app to add campsites name and image.. Enjoy!!.</p>
+          <hr class="my-4">
+          <a class="btn btn-primary btn-lg" href="/campgrounds/new" role="button">upload more camp</a>
+         </div>
+    
+
+
+    <div class="row">
+      <% campgrounds.forEach((campground)=>{ %>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+              <img src="<%=  campground.imgurl %>" class="card-img-top">
+                <div class="card-body">
+                <p class="card-text text-center"><%=  campground.name %></p> 
+                  <a href="campgrounds/<%=campground._id%>" class="btn btn-primary">more info</a>
+              </div>
+              <div>
+            
+              </div>
+          </div>
+          </div>
+        <% })%>
+    </div>
+    
+</div>
+
+
+<% include partials/footer%>
