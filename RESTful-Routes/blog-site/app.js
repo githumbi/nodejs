@@ -1,4 +1,5 @@
 const express = require("express"),
+        faker = require("faker"),
       mongoose = require("mongoose"),
       bodyParser = require("body-parser")
       app = express()
@@ -25,6 +26,13 @@ Blog = mongoose.model("Blog", blogSchema)
 //     image: "https://static1.visitestonia.com/images/3103015/Seaside+heated+tent+and+grilling+terrace+-+Torni+Talu+Holiday+Cottages.JPG",
 //     body: "sample of the body"
 // })
+
+//fake data form FAKER :)
+Blog.create({
+    title: faker.name.title(),
+    body: faker.lorem.sentences(),
+    image: faker.image.imageUrl()
+  })
 
 //RESTFUL Routes
 app.get("/", (req,res)=>{
