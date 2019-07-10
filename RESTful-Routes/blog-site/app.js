@@ -54,6 +54,7 @@ app.get("/blogs", (req, res) => {
 
 })
 
+
 //CREATE ROUTE
 app.get("/blogs/new", (req, res) => {
     res.render("new")
@@ -68,10 +69,23 @@ app.post("/blogs", (req, res) => {
         } else {
             //redirect
             res.redirect("/blogs")
+           
         }
     })
 
 })
+
+
+//show specific blog
+app.get("/blogs/:id", (req,res)=>{
+    Blog.findById(req.params.id, (err,showPost)=>{
+         if (err) {
+             res.redirect("/blogs")
+         } else {
+             res.render("show", {blogs: showPost})
+         }
+    })
+ })
 
 app.listen(3000, () => {
     console.log("listening to port 3000")
