@@ -5,10 +5,11 @@
 
 <% blogs.forEach((blog)=>{ %>
      <h3> <%= blog.title%></h3>
-    <img src="<%= blog.image%>" alt="">
+    <img src="<%= blog.image%>" alt="pic here">
    
     <p><%= blog.body%></p>
     <p><%= blog.created%></p>
+    <a href="/blogs/<%= blog._id%>">click here</a>
 <% })%>
 
 </div>
