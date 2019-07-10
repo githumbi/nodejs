@@ -1,6 +1,7 @@
 
-# nodejs
-nodejs exercises to learn using npm libraries i.e express
+# nodejs :rocket:
+nodejs exercises to learn using npm libraries i.e express 
+
 
 # node js app
 
