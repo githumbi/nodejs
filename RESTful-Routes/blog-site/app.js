@@ -87,6 +87,20 @@ app.get("/blogs/:id", (req,res)=>{
     })
  })
 
+ //EDIT R;oute
+ app.get("/blogs/:id/edit", (req,res)=>{
+     Blog.findById(req.params.id, (err, editBlog)=>{
+         if (err) {
+             res.redirect("/blogs")
+         } else {
+             res.render("edit", {blogs: editBlog})
+         }
+     })
+ })
+
+ //POST EDIT ROUTE
+
+
 app.listen(3000, () => {
     console.log("listening to port 3000")
 })

@@ -1,9 +1,16 @@
 <% include ./partials/header%>
+
 <div class="container">
-<h3><%= blogs.title%></h3>
-    <img src="<%= blogs.image%>" alt="pic here">
-   
+   <div class="card mb-3">
+    <img src="<%= blogs.image%>" class="card-img-top" alt="image here">
+    <div class="card-body">
+        <h5 class="card-title"><%= blogs.title%></h5>
+        <p class="card-text"><%= blogs.body%></p>
+        <p class="card-text"><small class="text-muted"><%= blogs.created%></small></p>
+    </div>
+</div> 
 </div>
- <p><%= blogs.body%></p>
+ 
+
 
 <% include ./partials/footer%>

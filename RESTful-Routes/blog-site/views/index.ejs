@@ -1,17 +1,20 @@
 <% include ./partials/header%>
 
 
-<div>
+
 
 <% blogs.forEach((blog)=>{ %>
-     <h3> <%= blog.title%></h3>
-    <img src="<%= blog.image%>" alt="pic here">
-   
-    <p><%= blog.body%></p>
-    <p><%= blog.created%></p>
-    <a href="/blogs/<%= blog._id%>">click here</a>
-<% })%>
-
+<div class="container">
+    <div class="card mb-3">
+        <img src="<%= blog.image%>" class="card-img-top" alt="image here">
+        <div class="card-body">
+            <h5 class="card-title"><%= blog.title%></h5>
+            <p class="card-text"><%= blog.body%></p>
+            <p class="card-text"><small class="text-muted"><%= blog.created%></small></p>
+            <a name="" id="" class="btn btn-primary" href="/blogs/<%= blog._id%>" role="button">more info</a>
+        </div>
+    </div>
 </div>
+<% })%>
 
 <%include ./partials/footer%>
